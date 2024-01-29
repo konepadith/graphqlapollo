@@ -15,7 +15,7 @@
             <v-text-field
               v-model="dateFormatted"
               label="Date"
-              hint="MM/DD/YYYY format"
+              hint="DD/MM/YYYY format"
               persistent-hint
               prepend-icon="mdi-calendar"
               :rules="dateSelectRules"

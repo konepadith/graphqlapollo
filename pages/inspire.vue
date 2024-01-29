@@ -206,9 +206,7 @@ export default {
   computed: {
     lastnameRules() {
       // If firstname is filled, lastname is optional; otherwise, it is required
-      return this.formData.firstname
-        ? []
-        : [(v) => !!v || "Last name is required"];
+      return this.formData.firstname ? [] : [(v) => !!v || "Last name is required"];
     },
   },
   watch: {
