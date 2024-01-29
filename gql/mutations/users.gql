@@ -1,0 +1,32 @@
+mutation insertUser($name: String!, $age: Int!, $position: String!) {
+  insert_users(objects: [{ name: $name, age: $age, position: $position }]) {
+    returning {
+      id
+      name
+      age
+      position
+    }
+  }
+}
+
+mutation userUpdate($id: Int!, $name: String, $age: Int!, $position: String) {
+  update_users(
+    where: { id: { _eq: $id } }
+    _set: { name: $name, age: $age, position: $position }
+  ) {
+    returning {
+      id
+      name
+      age
+      position
+    }
+  }
+}
+
+mutation deleteUser($id: Int!) {
+  delete_users(where: { id: { _eq: $id } }) {
+    returning {
+      id
+    }
+  }
+}

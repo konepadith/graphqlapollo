@@ -1,0 +1,17 @@
+query userQueries {
+  users {
+    id
+    name
+    age
+    position
+  }
+}
+
+query GetUsersById($id:Int!) {
+  users(where: {id: {_eq:$id}}) {
+    id
+		name
+		age
+		position
+  }
+}
