@@ -64,9 +64,11 @@
               v-model="formData.multifile"
               :rules="multifileRules"
               accept=".pdf, .doc, .docx"
+              ref="fileUpload"
               chips
               multiple
               label="File input w/ chips and Multi file"
+              style="visibility: hidden;"
             ></v-file-input>
             <v-menu
               ref="menu1"
@@ -108,7 +110,7 @@
             <v-btn color="error" class="ms-2" @click="reset">
               Reset Form
             </v-btn>
-            <v-btn color="warning" class="ms-2" @click="resetValidation">
+            <v-btn color="warning" class="ms-2" @click="uploadfilds">
               Reset Validation
             </v-btn>
           </v-col>
@@ -202,6 +204,9 @@ export default {
       this.formData[para] = date
       console.log(this.formData)
     },
+    uploadfilds(){
+      this.$refs.fileUpload.$refs.input.click();
+    }
   },
   computed: {
     lastnameRules() {
